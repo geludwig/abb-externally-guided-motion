@@ -40,7 +40,7 @@ cp -a src/google/. ../src/inc/google
 mkdir ../src/lib
 cp libprotobuf.a ../src/lib
 ```
-### ABB Proto Instruction set
+### ABB Proto Instruction Set
 TODO
 
 Precompiled instruction set (egm.pb.cpp and egm.pb.h) is included for now.
@@ -78,6 +78,34 @@ Run program.
 ./build/egmdemo
 ```
 ## ABB Robot Program
-TODO
-
-The following RAPID code is needed to control the robot with EGM.
+The following example RAPID code is needed to control the robot with EGM. Look up the ABB Externally Guided Motion Application Manual for a more detailed explanation.
+```
+PROC EGM()
+	MotionProcessModeSet(LOW_SPEED_STIFF_MODE);
+	MoveJ StartPos, v100, fine, tool0, \WObj0;
+	
+	EGMReset egmID1;
+	EGMGetID egmID1;
+	
+	egmSt1:=EGMGetState(egmID1);
+	IF egmSt1 <= EGM_STATE_CONNECTED THEN
+		EGMSetupUC ROB_1, egmID1, "EGMConfig", "EGMDevice:" \pose \CommTimeout:=60;
+	ENDIF
+	
+	EGMActPose egmID1 \StreamStart \Tool:=tool0 \WObj:=wobj0,
+		corrFrameEGM, EGM_FRAME_BASE,
+		tool0.tframe, EGM_FRAME_Base,
+		\x:=egm_minmax_lin1 \y:=egm_minmax_lin1
+		\z:=egm_minmax_lin1 \rx:=egm_minmax_rot1
+		\ry:=egm_minmax_rot1 \rz:=egm_minmax_rot1
+		\SampleRate:=4 MaxSpeedDeviation:=99;
+	
+	EGMRunPose egmID1, EGM_STOP_HOLD \NoWaitCond \x \y \z \Rx \Ry \Rz \CondTime:=99 \RampInTime:=0.01 \RampOutTime:=0.01;
+	
+	egmSt1:=EGMGetState(egmID1);
+	
+	IF egmSt1 = EGM_STATE_CONNECTED THEN
+		EGMReset egmID1;
+	ENDIF
+ENDPROC
+```
