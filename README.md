@@ -42,7 +42,7 @@ cp libprotobuf.a ../src/lib
 TODO
 Precompiled instruction set (egm.pb.cpp and egm.pb.h) is included for now.
 
-### Build project
+## Build project
 Check that the demo project has the following folder structure.
 ```
 .
@@ -68,4 +68,9 @@ Build project using cmake. Check that the current dir is *egmdemo/* !
 mkdir build
 cmake -B build -DCMAKE_BUILD_TYPE=Linux-Release
 cmake --build build
+```
+
+Run program.
+```
+./build/egmdemo
 ```
