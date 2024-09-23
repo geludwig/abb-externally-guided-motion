@@ -42,6 +42,7 @@ cp libprotobuf.a ../src/lib
 ```
 ### ABB Proto Instruction set
 TODO
+
 Precompiled instruction set (egm.pb.cpp and egm.pb.h) is included for now.
 
 ## Build project
@@ -78,3 +79,5 @@ Run program.
 ```
 ## ABB Robot Program
 TODO
+
+The following RAPID code is needed to control the robot with EGM.
