@@ -12,8 +12,8 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 ## Prerequisites
 - ABB robot and hardware controller with Externally Guided Motion AddOn OR RobotStudio for testing
-- Windows OS with ABB RobotStudio installed
-- Linux OS (preferably with PREEMPT_RT kernel)
+- Windows system with ABB RobotStudio installed
+- Linux system (preferably with PREEMPT_RT kernel)
 
 ## Get sources
 ### Download Project
@@ -74,3 +74,5 @@ Run program.
 ```
 ./build/egmdemo
 ```
+### ABB Robot Program
+TODO
