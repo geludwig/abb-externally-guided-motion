@@ -1,6 +1,8 @@
 # abb-externally-guided-motion
 A C++ wrapper for Linux to control an ABB robot via the Externally Guided Motion (EGM) interface.
 
+The build process is done on Linux (Visual Studio with WSL can also be used) an relies only on git and cmake. Windows is only needed to get the EGM instruction set, which is shipped with the ABB RobotStudio software.
+
 ## Disclaimer
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
