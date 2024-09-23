@@ -33,7 +33,8 @@ mkdir ../src/lib
 cp libprotobuf.a ../src/lib
 ```
 ### ABB Proto Instruction set
-todo
+TODO
+Precompiled instruction set (egm.pb.cpp and egm.pb.h) is included for now.
 
 ### Build project
 Check that the demo project has the following folder structure.
