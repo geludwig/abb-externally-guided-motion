@@ -65,10 +65,13 @@ Check that the demo project has the following folder structure.
 │   │   ├── EgmPositions.h
 │   │   ├── ...
 │   ├── inc
-│   │   ├── google
-│   │   │   ├── ...
+│   │   └── google
+│   │   │   └── protobuf
+│   │   │   │   ├── compiler
+│   │   │   │   ├── io
+│   │   │   │   ├── ...
 │   └── lib
-│   │   ├── libprotobuf.a
+│   │   └── libprotobuf.a
 ```
 
 Build project using cmake. Check that the current dir is *egmdemo/* !
