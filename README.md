@@ -74,5 +74,5 @@ Run program.
 ```
 ./build/egmdemo
 ```
-### ABB Robot Program
+## ABB Robot Program
 TODO
