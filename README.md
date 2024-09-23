@@ -8,7 +8,7 @@ Windows is only needed to get the EGM instruction set, which is shipped with the
 ## Other useful sources
 - https://github.com/madelinegannon/abb_egm_hello_world
 - https://github.com/fronchetti/egm-for-abb-robots
-- ABB Application manual: [Application Manual RW7](https://github.com/geludwig/abb-externally-guided-motion/blob/main/documentation/ExternallyGuidedMotionRW7-en.pdf)
+- [Application Manual RW7](https://github.com/geludwig/abb-externally-guided-motion/blob/main/documentation/ExternallyGuidedMotionRW7-en.pdf)
 
 ## Disclaimer
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
