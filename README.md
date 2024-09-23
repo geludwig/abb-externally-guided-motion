@@ -19,10 +19,10 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 ### Download Project
 ```
 git clone https://github.com/geludwig/abb-externally-guided-motion
-cd abb-externally-guided-motion/
+cd abb-externally-guided-motion/egmdemo
 ```
 ### Google Protobuf
-The EGM API is based on Google Protobuf. To build the *libprotobuf.a* lib, use the following commands.
+The EGM API is based on Google Protobuf. To build the *libprotobuf.a* lib, use the following commands. Check that the current dir is *egmdemo/ * !
 ```
 git clone -b v28.2 https://github.com/protocolbuffers/protobuf.git
 cd protobuf/
@@ -63,7 +63,7 @@ Check that the demo project has the following folder structure.
 │   │   ├── libprotobuf.a
 ```
 
-Build project using cmake.
+Build project using cmake. Check that the current dir is *egmdemo/ * !
 ```
 mkdir build
 cmake -B build -DCMAKE_BUILD_TYPE=Linux-Release
