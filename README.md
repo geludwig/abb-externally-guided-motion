@@ -65,7 +65,7 @@ cd ..
 ```
 
 ## Build demo project
-The included demo (demo.cpp, demo.h) has all the necessary instructions to initiate an EGM connection and do a cartesic movement. In the demo, its a movement from [x1000,y0,z1000] to [x1500,y0,z1000].
+The included demo (*demo.cpp, demo.h*) has all the necessary instructions to initiate an EGM connection and do a cartesic movement. In the demo, its a movement from [x1000,y0,z1000] to [x1500,y0,z1000].
 
 Tool configuration, coordinate system selection, offset frames, etc. is all done inside the RAPID code. Its wise to check everything inside RobotStudio first, before running it on a real robot.
 
