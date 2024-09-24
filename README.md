@@ -51,7 +51,11 @@ TODO
 
 Precompiled instruction set (egm.pb.cpp and egm.pb.h) is included for now.
 
-## Build project
+## Build demo project
+The included demo (demo.cpp, demo.h) has all the necessary instructions to initiate an EGM connection and do a cartesic movement. In the demo, its a movement from [x1000,y0,z1000] to [x1500,y0,z1000].
+
+Tool configuration, coordinate system selection, offset frames, etc. is all done inside the RAPID code. Its wise to check everything inside RobotStudio first, before running it on a real robot.
+
 Check that the demo project has the following folder structure.
 ```
 .
@@ -83,10 +87,11 @@ cmake -B build -DCMAKE_BUILD_TYPE=Linux-Release
 cmake --build build
 ```
 
-Run program.
+Run.
 ```
 ./build/egmdemo
 ```
+
 ## ABB Robot Program
 The following example RAPID code is needed to control the robot with EGM. Look up the ABB Externally Guided Motion Application Manual for a more detailed explanation.
 ```
