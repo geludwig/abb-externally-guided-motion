@@ -60,8 +60,7 @@ unzip ABB.RobotWare-6.15.7032.rspak
 cp ABB.RobotWare-6.15.7032/RobotPackages/RobotWare_RPK_6.15.7032/utility/Template/EGM/egm.proto .
 cp ../protobuf/protoc .
 ./protoc egm.proto --cpp_out=./
-cp egm.pb.cc egm.pb.cpp
-cp ./{egm.pb.h,egm.pb.cpp} ../src/egm/
+cp egm.pb.h ../src/egm/egm.pb.h && cp egm.pb.cc ../src/egm/egm.pb.cpp
 cd ..
 ```
 
