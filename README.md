@@ -52,7 +52,7 @@ The RobotWare contains the EGM Proto Instruction Set which needs to be compiled 
 
 [RobotWare IRC5 6.15.7032](https://robotstudiocdn.azureedge.net/distributionpackages/RobotWare/ABB.RobotWare-6.15.7032.rspak)
 
-Use the following commands to compile *egm.proto* to *egm.pb.cc* *and egm.pb.h*. Check that the current dir is *egmdemo/* !
+Use the following commands to compile *egm.proto* to *egm.pb.cpp* *and egm.pb.h*. Check that the current dir is *egmdemo/* !
 
 ```
 mkdir abbproto && cd abbproto
