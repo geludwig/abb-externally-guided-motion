@@ -18,8 +18,8 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 - Ubuntu 22.04 LTS patched with PREEMPT_RT kernel
 
 ## Prerequisites
-- ABB robot and hardware controller with Externally Guided Motion AddOn OR RobotStudio for testing
-- Windows system with ABB RobotStudio installed
+- ABB robot and hardware controller with Externally Guided Motion AddOn or RobotStudio for testing
+- Windows system with RobotStudio installed
 - Linux system (preferably with PREEMPT_RT kernel)
 
 ## Get sources
@@ -29,7 +29,7 @@ git clone https://github.com/geludwig/abb-externally-guided-motion
 cd abb-externally-guided-motion/egmdemo
 ```
 ### Google Protobuf
-The EGM API is based on Google Protobuf. To build the *libprotobuf.a* lib, use the following commands. Check that the current dir is *egmdemo/* !
+The EGM API is based on Google Protobuf. To build the *libprotobuf.a* lib, use the following commands. In the following code block, release v28.2 is specified, but newer releases should also work. Check that the current dir is *egmdemo/* !
 ```
 git clone -b v28.2 https://github.com/protocolbuffers/protobuf.git
 cd protobuf/
