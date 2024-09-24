@@ -3,7 +3,7 @@ A C++ wrapper for Linux to control an ABB robot via the Externally Guided Motion
 
 The build process relies only on git and cmake. The following build pipeline is written for Linux, but Visual Studio with WSL can also be used.
 
-Windows is only needed to get the EGM instruction set, which is shipped with the ABB RobotStudio software.
+Windows is only needed to get the EGM Proto Instruction Set web link through RobotStudio. A example link is specified below.
 
 ## Other useful sources
 - https://github.com/madelinegannon/abb_egm_hello_world
@@ -19,7 +19,6 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 
 ## Prerequisites
 - ABB robot and hardware controller with Externally Guided Motion AddOn or RobotStudio for testing
-- Windows system with RobotStudio installed
 - Linux system (preferably with PREEMPT_RT kernel)
 
 ## Get sources
@@ -40,16 +39,31 @@ ctest --verbose
 ```
 Copy the google source files and lib to the project src folder.
 ```
-mkdir ../src/inc
-cp -a src/google/. ../src/inc/google
-mkdir ../src/lib
-cp libprotobuf.a ../src/lib
+mkdir ../src/inc && cp -a src/google/. ../src/inc/google
+mkdir ../src/lib && cp libprotobuf.a ../src/lib
 cd ..
 ```
-### ABB Proto Instruction Set
-TODO
+### ABB EGM Proto Instruction Set
+Use the correct RobotWare (aka hardware controller) for your robot, for example *OmniCore* or *IRC5*.
 
-Precompiled instruction set (egm.pb.cpp and egm.pb.h) is included for now.
+The RobotWare contains the EGM Proto Instruction Set which needs to be compiled into C++ source files. You can get it via RobotStudio or use the links below. Keep in mind, that these links may be not the latest available version.
+
+[RobotWare OmniCore 7.15.2](https://robotstudiocdn.azureedge.net/distributionpackages/RobotWare/ABB.RobotWare-7.15.2.rspak)
+
+[RobotWare IRC5 6.15.7032](https://robotstudiocdn.azureedge.net/distributionpackages/RobotWare/ABB.RobotWare-6.15.7032.rspak)
+
+Use the following commands to compile *egm.proto* to *egm.pb.cc* *and egm.pb.h*. Check that the current dir is *egmdemo/* !
+
+```
+mkdir abbproto && cd abbproto
+unzip ABB.RobotWare-6.15.7032.rspak
+cp ABB.RobotWare-6.15.7032/RobotPackages/RobotWare_RPK_6.15.7032/utility/Template/EGM/egm.proto .
+cp ../protobuf/protoc .
+./protoc egm.proto --cpp_out=./
+cp egm.pb.cc egm.pb.cpp
+cp ./{egm.pb.h,egm.pb.cpp} ../src/egm/
+cd ..
+```
 
 ## Build demo project
 The included demo (demo.cpp, demo.h) has all the necessary instructions to initiate an EGM connection and do a cartesic movement. In the demo, its a movement from [x1000,y0,z1000] to [x1500,y0,z1000].
