@@ -44,6 +44,7 @@ mkdir ../src/inc
 cp -a src/google/. ../src/inc/google
 mkdir ../src/lib
 cp libprotobuf.a ../src/lib
+cd ..
 ```
 ### ABB Proto Instruction Set
 TODO
@@ -54,24 +55,25 @@ Precompiled instruction set (egm.pb.cpp and egm.pb.h) is included for now.
 Check that the demo project has the following folder structure.
 ```
 .
-├── CMakeLists.txt
-├── CMakePresets.json
-├── demo.cpp
-├── demo.h
-├── src
-│   ├── egm
-│   │   ├── egm.pb.cpp
-│   │   ├── egm.pb.h
-│   │   ├── EgmPositions.h
-│   │   ├── ...
-│   ├── inc
-│   │   └── google
-│   │   │   └── protobuf
-│   │   │   │   ├── compiler
-│   │   │   │   ├── io
-│   │   │   │   ├── ...
-│   └── lib
-│   │   └── libprotobuf.a
+├── egmdemo
+│   ├── CMakeLists.txt
+│   ├── CMakePresets.json
+│   ├── demo.cpp
+│   ├── demo.h
+│   ├── src
+│   │   ├── egm
+│   │   │   ├── egm.pb.cpp
+│   │   │   ├── egm.pb.h
+│   │   │   ├── EgmPositions.h
+│   │   │   ├── ...
+│   │   ├── inc
+│   │   │   └── google
+│   │   │   │   └── protobuf
+│   │   │   │   │   ├── compiler
+│   │   │   │   │   ├── io
+│   │   │   │   │   ├── ...
+│   │   └── lib
+│   │   │   └── libprotobuf.a
 ```
 
 Build project using cmake. Check that the current dir is *egmdemo/* !
