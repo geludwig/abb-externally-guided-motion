@@ -3,7 +3,7 @@ A C++ wrapper for Linux to control an ABB robot via the Externally Guided Motion
 
 The build pipeline is written for Linux and relies only on git and cmake, but Visual Studio with WSL can also be used.
 
-Windows is only needed to get the EGM Proto Instruction Set through RobotStudio. Otherwise you can use the links provided below.
+Windows is only needed to get the EGM Proto Instruction Set through RobotStudio. Otherwise you can use the links provided under [ABB EGM Proto Instruction Set](https://github.com/geludwig/abb-externally-guided-motion/tree/main?tab=readme-ov-file#abb-egm-proto-instruction-set).
 
 ## Other useful sources
 - https://github.com/madelinegannon/abb_egm_hello_world
