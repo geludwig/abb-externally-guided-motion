@@ -17,6 +17,9 @@ THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR I
 - Ubuntu 22.04 LTS
 - Ubuntu 22.04 LTS patched with PREEMPT_RT kernel
 
+## Limitations
+Only cartesic coordinates, quaternions and speedref is implemented at the moment.
+
 ## Prerequisites
 - ABB robot and hardware controller with Externally Guided Motion AddOn or RobotStudio for testing
 - Linux system (preferably with PREEMPT_RT kernel)
