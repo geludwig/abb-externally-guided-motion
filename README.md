@@ -14,8 +14,7 @@ Windows is only needed to get the EGM Proto Instruction Set through RobotStudio.
 THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Tested on
-- Ubuntu 22.04 LTS
-- Ubuntu 22.04 LTS patched with PREEMPT_RT kernel
+- Ubuntu 22.04 LTS (patched with PREEMPT_RT kernel)
 
 ## Limitations
 Only cartesic coordinates, quaternions and speedref is implemented at the moment.
@@ -24,7 +23,7 @@ Only cartesic coordinates, quaternions and speedref is implemented at the moment
 - ABB robot and hardware controller with Externally Guided Motion AddOn or RobotStudio for testing
 - Linux system (preferably with PREEMPT_RT kernel)
 
-## Get sources
+## Build sources
 ### Download Project
 ```
 git clone https://github.com/geludwig/abb-externally-guided-motion
@@ -106,6 +105,30 @@ cmake --build build
 Run.
 ```
 ./build/egmdemo
+```
+
+## What does ... ?
+- EgmPositions.h : Cartesic feedback and target positions of the robot as structure.
+- EgmSocket.h : UDP socket functions as structure.
+- EgmProto.h : Send and receive messages from the robot.
+
+Because everything is defined as structure, its easy to talk to multiple robots. Just initialize each robot with its own structure.
+```
+// Robot 0
+EgmPositionsFeedback egmFeedback0;
+EgmPositionsTarget egmTarget0;
+UdpSocket socket0;
+socket0.port = 6510;
+receiveRobotMessage(socket0, egmFeedback0);
+sendRobotMessage(socket0, egmTarget0);
+
+// Robot 1
+EgmPositionsFeedback egmFeedback1;
+EgmPositionsTarget egmTarget1;
+UdpSocket socket1;
+socket1.port = 6511;
+receiveRobotMessage(socket1, egmFeedback1);
+sendRobotMessage(socket1, egmTarget1);
 ```
 
 ## ABB Robot Program
